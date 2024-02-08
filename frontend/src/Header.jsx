@@ -1,6 +1,7 @@
 import './Header.css';
+import { useState } from 'react';
 
-const Header = () => {
+export const Header = () => {
     return (
     <div>
         <div className="wrapper-header">
@@ -9,4 +10,25 @@ const Header = () => {
     </div>
     );
 }
-export default Header;
+
+
+export const Counting = () => {
+    const [count, setCount] = useState(0);
+    return (
+        <div>
+            <ul className="count-wrapper">
+                <button type='button' className='btn-add' onClick={() => setCount(count => count + 1)}>( + )</button>
+                <span className='window'>{ count }</span>
+                <button type='button' className='btn-subtract' onClick={() => setCount(count => count - 1)}>( - )</button>
+            </ul>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
